@@ -2,26 +2,26 @@ tasks = []
 
 def add_task(task):
     tasks.append(task)
-    print(f"✅ Task added: {task}")
+    print(f"Task added: {task}")
 
 def view_tasks():
     if not tasks:
-        print("📝 No tasks in the list.")
+        print("No tasks in the list.")
     else:
-        print("📋 Your To-Do List:")
+        print("Your To-Do List:")
         for i, task in enumerate(tasks, 1):
             print(f"{i}. {task}")
 
 def delete_task(index):
     if 0 <= index < len(tasks):
         removed = tasks.pop(index)
-        print(f"❌ Task removed: {removed}")
+        print(f"Task removed: {removed}")
     else:
-        print("⚠ Invalid task number!")
+        print("Invalid task number!")
 
 def clear_tasks():
     tasks.clear()
-    print("🚮 All tasks cleared!")
+    print("All tasks cleared!")
 
 while True:
     print("\n--- To-Do List Menu ---")
@@ -44,11 +44,11 @@ while True:
             index = int(input("Enter task number to delete: ")) - 1
             delete_task(index)
         except ValueError:
-            print("⚠ Enter a valid number!")
+            print("Enter a valid number!")
     elif choice == "4":
         clear_tasks()
     elif choice == "5":
-        print("👋 Exiting... Have a productive day!")
+        print("Exiting... Have a productive day!")
         break
     else:
-        print("❗ Invalid choice. Please select 1–5.")
+        print("Invalid choice. Please select 1–5.")
